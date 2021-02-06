@@ -45,7 +45,7 @@ function peek(queue) {
 }
 
 function isEmpty(queue){
-    if(queue === null){
+    if(queue.first === null){
         return 'Queue is Empty'
     }
 
@@ -117,6 +117,22 @@ function sqDance(queue){
     }
 }
 
+const bank = (line) => {
+    const customerHelped = line.dequeue();
+    const random = Math.floor(Math.random() * 5);
+
+    if(line.first === null){
+        return 'empty line';
+    }
+        if (random === 1){
+            line.enqueue(customerHelped);
+            return 'customer returned'
+        }
+        else{
+            return customerHelped;
+}
+}
+
 let starTrekQ = new Queue();
 
 starTrekQ.enqueue('Kirk');
@@ -139,10 +155,30 @@ sqr.enqueue('M David');
 sqr.enqueue('M Christopher');
 sqr.enqueue('F Beyonce');
 
+let bankLine = new Queue();
 
-console.log(display(sqr));
-sqr.dequeue();
-sqr.dequeue();
-console.log(display(sqr));
+bankLine.enqueue('a')
+bankLine.enqueue('b')
+bankLine.enqueue('c')
+bankLine.enqueue('d')
+bankLine.enqueue('e')
+bankLine.enqueue('f')
+bankLine.enqueue('g')
+bankLine.enqueue('h')
+bankLine.enqueue('i')
+bankLine.enqueue('j')
+bankLine.enqueue('k')
+//console.log(isEmpty(bankLine))
+console.log(bank(bankLine));
+console.log(bank(bankLine));
+console.log(bank(bankLine));
+console.log(bank(bankLine));
+console.log(bank(bankLine));
+console.log(display(bankLine))
+
+// console.log(display(sqr));
+// sqr.dequeue();
+// sqr.dequeue();
+// console.log(display(sqr));
 //console.log(sqDance(sqr));
 //console.log(display(starTrekQ));
